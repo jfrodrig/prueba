@@ -1,4 +1,5 @@
 class Client1sController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_client1, only: [:show, :edit, :update, :destroy]
 
   # GET /client1s
@@ -78,4 +79,8 @@ end
     def client1_params
       params.require(:client1).permit(:name, :birth, :gender, :country, :city, :avatar)
     end
+def store_dir
+  "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+end
+
 end
