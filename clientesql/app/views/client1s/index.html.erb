@@ -1,4 +1,10 @@
-<h1>Listing client1s</h1>
+<h1>Listing clients</h1>
+
+
+      <p>
+         <%= text_field_tag :search, params[:search] %>
+         <%= submit_tag "Search", :name => nil %>
+      </p>
 
 <table>
   <thead>
@@ -29,6 +35,9 @@
         <td><%= link_to 'Edit', edit_client1_path(client1) %></td>
         <td><%= link_to 'Destroy', client1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+	  
+	
+	  
     <% end %>
   </tbody>
 </table>
@@ -36,3 +45,4 @@
 <br>
 
 <%= link_to 'New Client1', new_client1_path %>
+

@@ -2,11 +2,23 @@ class Client1sController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_client1, only: [:show, :edit, :update, :destroy]
 
+
+def index
+  @client1s = client1.search(params[:search])
+end
+
   # GET /client1s
   # GET /client1s.json
+
   def index
-    @client1s = Client1.all
+   @client1s = Client1.all
+
   end
+
+
+
+
+
 def upload_file(file)
   # Declaring
   uploader = FileUploader.new

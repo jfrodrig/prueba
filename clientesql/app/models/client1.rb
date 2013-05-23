@@ -14,4 +14,13 @@ class MyUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
 end
