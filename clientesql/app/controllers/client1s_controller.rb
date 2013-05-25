@@ -4,16 +4,13 @@ class Client1sController < ApplicationController
 
 
 def index
-  @client1s = client1.search(params[:search])
+  @client1s = Client1.search(params[:search])
 end
 
   # GET /client1s
   # GET /client1s.json
 
-  def index
-   @client1s = Client1.all
-
-  end
+ 
 
 
 
