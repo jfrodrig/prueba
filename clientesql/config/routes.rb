@@ -1,5 +1,8 @@
 Clientesql::Application.routes.draw do
+ 
   devise_for :users
+  devise_for :models
+
   resources :client1s
 
   # The priority is based upon order of creation: first created -> highest priority.
