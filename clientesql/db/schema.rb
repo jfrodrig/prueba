@@ -13,26 +13,21 @@
 
 ActiveRecord::Schema.define(version: 20130530004038) do
 
+  create_table "baseclientes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "client1s", force: true do |t|
     t.string   "name"
     t.date     "birth"
     t.string   "gender"
     t.string   "country"
     t.string   "city"
+    t.string   "avatar"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "avatar"
-  end
-
-  create_table "clients", force: true do |t|
-    t.string "name"
-    t.date   "birth"
-    t.string "gender"
-    t.string "country"
-    t.string "departament"
-    t.string "city"
-    t.string "avatar"
   end
 
   create_table "users", force: true do |t|
