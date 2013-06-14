@@ -1,0 +1,40 @@
+<%= form_for(@user) do |u|%>
+ <div class ='field'>
+  <%= u.label :nombre %>
+  <%= u.text_field :nombre%>
+ </div>
+ <div class ='field'>
+  <%= u.label :bio %>
+  <%= u.text_area :bio, cols:30, rows:10 %>
+ </div>
+ <div class ='field'>
+  <%= u.label :programa %>
+  <%= u.check_box :programa, checked: "checked"%>
+ </div>
+
+   <div class ='field'>
+        <% programas ={'experto'=>'E','medio'=>'M', 'novato'=>'N'}%> 
+           <fieldset>
+               <%lista = programas.sort%> 
+               <%lista.each do |bio|%>
+                   <%= u.radio_button :bio, bio[1]%>
+                   <label for "<%= bio[1]%>"><%=bio[0]%></label>
+               <%end%>
+           </fieldset>
+           <%= u.label :Nivel%>
+           <%=u.select :bio,lista, selected: "N"%>
+   </div>
+   <div class ='field'>
+     <%= u.label :birthday %>
+     <%= u.date_select :birthday, start_year:1970, end_year:2000%>
+   </div>
+
+   <div class ='field'>
+     <%= u.label :Work_Time %>
+     <%= u.time_select :work_time%>
+   </div>
+
+  <div class="actions">
+    <%= u.submit %>
+  </div>
+<%end%>
