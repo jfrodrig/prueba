@@ -27,10 +27,13 @@
 
 <p>
   <strong>image:</strong>
-  <%= @client1.image %>
+<p>
+
+<%= image_tag( @client1.avatar_url( :medium ) )  if ( @client1.avatar? ) %>
+</P>
 </p>
 
-<%= link_to 'Edit', edit_client1_path(@client1) %> |
-<%= link_to 'Back', client1s_path %>
+<%= link_to 'Edit', edit_client1_path(@client1) %> |<%= link_to 'Back', client1s_path %> |<%=link_to( 'Example',client1s_path )%>
+
 
 

@@ -11,9 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130530004038) do
+ActiveRecord::Schema.define(version: 20130625150554) do
+
+  create_table "articles", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "baseclientes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.string   "departament"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +42,43 @@ ActiveRecord::Schema.define(version: 20130530004038) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.string   "continent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "productos", force: true do |t|
+    t.string   "name"
+    t.text     "des"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "part3_number"
+  end
+
+  create_table "tablaejemplo3s", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tableproductos1s", force: true do |t|
+    t.string "name"
+    t.text   "apellidos"
+  end
+
+  create_table "tas", force: true do |t|
   end
 
   create_table "users", force: true do |t|

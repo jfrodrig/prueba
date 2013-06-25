@@ -43,9 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
- gem 'devise', '3.0.0.rc'
+ gem 'devise'
  gem 'carrierwave'
- gem 'protected_attributes'
+ #gem 'protected_attributes'
  gem 'jquery-rails'
  gem 'rmagick'
 

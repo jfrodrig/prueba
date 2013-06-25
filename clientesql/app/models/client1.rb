@@ -1,5 +1,5 @@
 class Client1 < ActiveRecord::Base
-  attr_accessible :name, :birth, :gender, :country, :city, :avatar, :image
+  #attr_accessible :name, :birth, :gender, :country, :city, :avatar, :image
   belongs_to :baseclientes
   mount_uploader :avatar, AvatarUploader
 def self.search(search)
@@ -9,19 +9,10 @@ def self.search(search)
     find(:all)
   end
 end
-  
-end
-class MyUploader < CarrierWave::Uploader::Base
-  def store_dir
-    'public/my/upload/directory'
+
+  def cumplio_annos?
+    # Reglas del negocio
+    return( true )
   end
-
-end
-
-class MyUploader < CarrierWave::Uploader::Base
-  def extension_white_list
-    %w(jpg jpeg gif png)
-  end
-
 end
 

@@ -8,7 +8,19 @@
 </head>
 <body>
 <div id="user_nav">
-  <% if user_signed_in? %>
+ 
+<nav class='navbar'>
+     <div class='navbar-iner'>
+         <ul class='nav'>
+              <li>  <%=link_to 'Client', root_path%></li>
+              <li> <%= link_to 'Cities', cities_path%> </li>
+              <li> <%= link_to 'Countries', countries_path%> </li>
+            </ul> 
+      </div>
+</nav>
+
+
+<% if user_signed_in? %>
     Conectado como <%= current_user.email %>. No eres t&uacute;?
     <%= link_to "Log off", destroy_user_session_path, :method => :get%>
   <% else %>	

@@ -4,7 +4,13 @@ class Post < ActiveRecord::Base
   validates_presence_of :titulo, :extension
   FOTOS = File.join( Rails.root, 'public', 'photo_store' )
   after_save :guardar_foto
-
+def self.search(search)
+  if search
+    find(:all, :conditions => ['titulo LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
   #=================================
   # photo=
   #=================================

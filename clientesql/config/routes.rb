@@ -1,5 +1,12 @@
 Clientesql::Application.routes.draw do
- 
+  resources :cities
+
+  resources :countries
+
+  get 'pages' => 'pages#home'
+  get 'pages/jhon' => 'pages#fredy'
+  resources :articles
+
   devise_for :users
   devise_for :models
 

@@ -15,7 +15,7 @@
       <th>Country</th>
       <th>City</th>
       <th>Avatar</th>
-	  <th>image</th>
+	 
       <th></th>
       <th></th>
       <th></th>
@@ -30,19 +30,17 @@
         <td><%= client1.gender %></td>
         <td><%= client1.country %></td>
         <td><%= client1.city %></td>
-        <td><%= client1.avatar %></td>
+        <td><%= image_tag(client1.avatar_url( :thumb )) if (client1.avatar? )  %></td>
         <td><%= link_to 'Show', client1 %></td>
         <td><%= link_to 'Edit', edit_client1_path(client1) %></td>
         <td><%= link_to 'Destroy', client1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-	  
-	
-	  
-    <% end %>
+      <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Client1', new_client1_path %>
-
+<%= link_to 'New Client', new_client1_path %>
+<%= link_to '| Contries', countries_path %>
+<%= link_to ' | New City', new_city_path %>

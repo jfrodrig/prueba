@@ -4,6 +4,9 @@ class Client1sController < ApplicationController
 def index
   @client1s = Client1.search(params[:search])
 end
+def index2
+  @client1s = Client1.search(params[:search])
+end
 
   # GET /client1s
   # GET /client1s.json
